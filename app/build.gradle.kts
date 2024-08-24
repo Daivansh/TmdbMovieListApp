@@ -1,11 +1,16 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    id("kotlin-kapt")
+    id("kotlin-parcelize")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
     namespace = "get.tmdb.movielistapp"
     compileSdk = 34
+
+    android.buildFeatures.buildConfig = true
 
     defaultConfig {
         applicationId = "get.tmdb.movielistapp"
@@ -18,6 +23,7 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
     }
 
     buildTypes {
@@ -27,6 +33,18 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "TMDB_API_KEY", "\"19ba3e38aba6c7800578f2e2ce1e6d9d\"")
+        }
+        debug {
+            isDebuggable = true
+            isMinifyEnabled = false
+
+            applicationIdSuffix = ".debug"
+
+            buildConfigField("String", "BASE_URL", "\"https://api.themoviedb.org/3/\"")
+            buildConfigField("String", "TMDB_API_KEY", "\"19ba3e38aba6c7800578f2e2ce1e6d9d\"")
         }
     }
     compileOptions {
@@ -52,6 +70,15 @@ android {
 dependencies {
 
     implementation(libs.androidx.core.ktx)
+
+    //Hilt
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.hilt.navigation.compose)
+    kapt(libs.hilt.compiler)
+
+    // Retrofit
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
 //    UI dependencies
     implementation(libs.androidx.appcompat)
