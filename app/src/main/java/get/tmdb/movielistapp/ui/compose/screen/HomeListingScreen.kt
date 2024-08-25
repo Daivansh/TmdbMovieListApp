@@ -26,6 +26,13 @@ import get.tmdb.movielistapp.ui.compose.views.MovieItemCard
 import get.tmdb.movielistapp.ui.compose.views.SearchView
 import get.tmdb.movielistapp.viewmodel.HomeListingViewmodel
 
+/**
+ * Home listing screen which is the main screen of the app
+ * Its a first screen of the navigation graph and it is used to display the list of movies
+ *
+ * @param homeListingViewModel ViewModel to be used for the home listing screen to laod list of movies at first time and searched movies
+ * @param navigateToMovieDetails callback to fire to navigate to the movie details screen
+ */
 @Composable
 fun HomeListingScreen(
     homeListingViewModel: HomeListingViewmodel = hiltViewModel(),
@@ -43,11 +50,23 @@ fun HomeListingScreen(
         LoadingScreen(homeListingViewModel.isLoading.value)
         EmptyScreen(homeListingViewModel.isEmptyList.value)
         ErrorScreen(homeListingViewModel.apiError.value){
-            homeListingViewModel.loadTrendingMoviesListItems()
+//            retry api call with the search text query if present else load the list of trending movies
+            if(homeListingViewModel.searchText.value.isEmpty()){
+                homeListingViewModel.loadTrendingMoviesListItems()
+            }else{
+                homeListingViewModel.onSearchFieldTextChange(text = homeListingViewModel.searchText.value)
+            }
         }
     }
 }
 
+
+/**
+ * Search UI which is used in the home listing screen for searching movies
+ *
+ * @param searchText String for the search text to be displayed in the view
+ * @param onTextChange Callback to be fired when the text is changed in the view
+ */
 @Composable
 fun SearchUI(searchText: String, onTextChange: (String) -> Unit) {
     SearchView(
@@ -57,6 +76,13 @@ fun SearchUI(searchText: String, onTextChange: (String) -> Unit) {
     )
 }
 
+
+/**
+ * Movies list which is used in the home listing screen for displaying movies items
+ *
+ * @param moviesList List of MovieListItem objects which contains the details of the movies to be displayed
+ * @param navigateToMovieDetails callback to fire to navigate to the movie details screen from the card
+ */
 @Composable
 fun MoviesList(moviesList: List<MovieListItem>, navigateToMovieDetails: (MovieListItem) -> Unit) {
     if(moviesList.isEmpty()){
@@ -77,6 +103,12 @@ fun MoviesList(moviesList: List<MovieListItem>, navigateToMovieDetails: (MovieLi
     }
 }
 
+
+/**
+ * Loading screen which is used in the home listing screen while the api to fetch the list of movies is ongoing
+ *
+ * @param isLoading Boolean to check if the api to fetch the list of movies is ongoing
+ */
 @Composable
 fun LoadingScreen(isLoading: Boolean) {
     if(isLoading){
@@ -94,6 +126,14 @@ fun LoadingScreen(isLoading: Boolean) {
     }
 }
 
+
+/**
+ * Error screen to show in the home listing screen when the api to fetch the list of movies fails
+ * It contains the error text and a retry button to retry the api call again in case of failure
+ *
+ * @param errorText String to be displayed in the error screen
+ * @param onRetryClick Callback to be fired when the retry button is clicked
+ */
 @Composable
 fun ErrorScreen(errorText: String?, onRetryClick: () -> Unit) {
     if(errorText.isNullOrEmpty()){
@@ -113,6 +153,12 @@ fun ErrorScreen(errorText: String?, onRetryClick: () -> Unit) {
     }
 }
 
+
+/**
+ * Empty screen to show in the home listing screen when there is no movies to be displayed for the search query
+ *
+ * @param isListEmpty Boolean to check if the list of movies is empty
+ */
 @Composable
 fun EmptyScreen(isListEmpty: Boolean) {
     if(isListEmpty) {

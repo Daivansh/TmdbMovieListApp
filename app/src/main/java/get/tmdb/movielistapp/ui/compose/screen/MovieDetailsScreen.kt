@@ -1,7 +1,6 @@
 package get.tmdb.movielistapp.ui.compose.screen
 
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,7 +8,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -35,6 +33,13 @@ import get.tmdb.movielistapp.domain.MovieListItem
 import get.tmdb.movielistapp.ui.theme.Grey600
 import get.tmdb.movielistapp.utils.Constants
 
+/**
+ * Movie details screen which is used to display the details of a movie
+ * Its a second screen of the navigation graph and it is used to display the details of a movie
+ *
+ * @param movieItem MovieListItem object which contains the details of the movie to be displayed here
+ * @param onBackClick callback to fire to navigate back to the home listing screen, it will be passed to the top app bar for the back button
+ */
 @Composable
 fun MovieDetailsScreen(
     movieItem: MovieListItem,
@@ -96,6 +101,12 @@ fun MovieDetailsScreen(
     }
 }
 
+/**
+ * Top app bar which is used in the movie details screen as the top bar
+ * It contains the back button to navigate back to the home listing screen
+ *
+ * @param onBackClick callback to fire to navigate back to the home listing screen
+ */
 @Composable
 fun TopAppBar(onBackClick: () -> Unit) {
     Row(

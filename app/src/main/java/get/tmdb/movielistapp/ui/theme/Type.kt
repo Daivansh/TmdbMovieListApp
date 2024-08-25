@@ -6,7 +6,11 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 
-// Set of Material typography styles to start with
+/**
+ * All typography to be used in the app based on material design
+ */
+
+
 val Typography = Typography(
 //    It will be used for movie list item label
     labelMedium = TextStyle(

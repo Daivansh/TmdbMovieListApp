@@ -7,6 +7,10 @@ import get.tmdb.movielistapp.domain.MovieListItem
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 
+/**
+ * Custom NavType to be used in the used for passing MovieListItem from listing screen to details sceen destinations
+ * NavType defines how arguments should be serialized and deserialized when navigating between screens.
+ */
 object CustomNavType {
 
     val MovieItemType = object : NavType<MovieListItem>(

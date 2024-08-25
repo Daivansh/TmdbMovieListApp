@@ -25,6 +25,14 @@ import get.tmdb.movielistapp.R
 import get.tmdb.movielistapp.domain.MovieListItem
 import get.tmdb.movielistapp.utils.Constants
 
+
+/**
+ * Movie item card which is being added for each movie in the home listing screen
+ *
+ * @param item MovieListItem object which contains the details of the movie to be displayed in each card
+ * @param modifier Modifier for the card layout properties
+ * @param navigateToMovieDetails callback to fire to navigate to the movie details screen from the card
+ */
 @Composable
 fun MovieItemCard(item: MovieListItem, modifier: Modifier, navigateToMovieDetails: (movieListItem: MovieListItem) -> Unit) {
     Box(modifier = Modifier

@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 /**
- * MoviesListUseCase class to be used in ViewModel to get movie list based on movie type
+ * MoviesListUseCase class to be used in ViewModel to get trending movie list from the api based on the page number
  */
 class TrendingMoviesListUseCase @Inject constructor(private val movieRepository: MovieRepository) {
 

@@ -8,6 +8,12 @@ class NetworkUtils {
 
     companion object {
 
+        /**
+         * Checks if the internet is available or not
+         *
+         * @param context Context to be used for the network check
+         * @return Boolean to check if the internet is available or not
+         */
         @Suppress("DEPRECATION")
         @JvmStatic
         fun isNetworkAvailable(context: Context?): Boolean {

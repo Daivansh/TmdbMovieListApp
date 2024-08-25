@@ -5,6 +5,10 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+/**
+ * MovieApiService interface to be used by Retrofit to make api calls
+ * All the api calls to be used in the app are declared here
+ */
 interface MovieApiService {
 
 //get trending movies list for current week

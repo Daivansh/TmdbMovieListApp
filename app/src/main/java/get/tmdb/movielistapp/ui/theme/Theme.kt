@@ -26,6 +26,13 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+/**
+ * Theme to be used in the app based on the material design
+ * It is used for the whole app
+ *
+ * @param darkTheme Boolean to check if the system is in dark mode
+ * @param content Composable content to be rendered in the app
+ */
 @Composable
 fun TmdbMovieListAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

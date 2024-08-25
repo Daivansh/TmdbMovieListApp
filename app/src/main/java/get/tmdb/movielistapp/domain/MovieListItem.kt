@@ -3,6 +3,10 @@ package get.tmdb.movielistapp.domain
 import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable
 
+/**
+ * MovieListItem class represents a single movie item in the list of movies
+ * It has all the details of the movie to be displayed
+ */
 @Serializable
 data class MovieListItem(
 

@@ -15,6 +15,13 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+/**
+ * Home listing viewmodel which is used to load the list of movies at first time and also searched movies further based on the search query
+ * It makes the use of use cases to make the api calls and converts their responses to the States
+ * Such states are observed by the composable view in the UI which reacts to the data changes in such states
+ *
+ * Added a debounce search api job to avoid multiple api calls when the user types fast
+ */
 @HiltViewModel
 class HomeListingViewmodel @Inject constructor(val interactors: Interactors) : ViewModel() {
 
@@ -33,7 +40,7 @@ class HomeListingViewmodel @Inject constructor(val interactors: Interactors) : V
     private val _isEmptyList = mutableStateOf(false)
     val isEmptyList: State<Boolean> = _isEmptyList
 
-    var debounceSearchApiJob: Job? = null
+    private var debounceSearchApiJob: Job? = null
 
     init {
         loadTrendingMoviesListItems()

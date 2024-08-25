@@ -1,5 +1,8 @@
 package get.tmdb.movielistapp.utils
 
+/**
+ * All the constants to be used in the app
+ */
 object Constants {
     const val PREFERRED_LANGUAGE = "en"
 

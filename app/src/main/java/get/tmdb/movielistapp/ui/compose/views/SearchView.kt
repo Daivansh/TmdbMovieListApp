@@ -31,6 +31,15 @@ import get.tmdb.movielistapp.ui.theme.Grey400
 import get.tmdb.movielistapp.ui.theme.Grey600
 import get.tmdb.movielistapp.ui.theme.White
 
+/**
+ * Search view which is used in home listing screen for searching movies
+ * It is generic and can be used in any screen for any use case
+ *
+ * @param modifier Modifier for the search view layout properties
+ * @param searchText String for the search text to be displayed in the view
+ * @param placeHolder String for the placeholder text as hint
+ * @param onTextChange Callback for the text change event in the view
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SearchView(

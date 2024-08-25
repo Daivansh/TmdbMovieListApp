@@ -15,6 +15,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+/**
+ * NetworkModule class is a hilt module to be used for providing all the network related dependencies like retrofit, okhttp, gson etc
+ */
 @InstallIn(SingletonComponent::class)
 @Module
 object NetworkModule {

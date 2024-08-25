@@ -9,6 +9,10 @@ import get.tmdb.movielistapp.api.repo.MovieRepository
 import get.tmdb.movielistapp.usecase.SearchMoviesListUseCase
 import get.tmdb.movielistapp.usecase.model.Interactors
 
+/**
+ * This module is used to inject the use cases into the viewmodels by injecting the interactors data class
+ * which contains all the use cases to be injected
+ */
 @InstallIn(ViewModelComponent::class)
 @Module
 object UseCaseModule {

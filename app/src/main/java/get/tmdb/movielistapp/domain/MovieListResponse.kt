@@ -1,8 +1,10 @@
 package get.tmdb.movielistapp.domain
 
 import com.google.gson.annotations.SerializedName
-import get.tmdb.movielistapp.domain.MovieListItem
 
+/**
+ * MovieListResponse class to be used in the api response to get the list of movies
+ */
 data class MovieListResponse(
 
     @SerializedName("page")

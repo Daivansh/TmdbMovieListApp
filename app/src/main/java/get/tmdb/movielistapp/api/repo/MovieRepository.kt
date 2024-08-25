@@ -13,8 +13,16 @@ import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
+/**
+ * MovieRepository class is used to make actual retrofit api calls related to the movies
+ * It converts the api response to the ApiResult object and emits it to the flow to be consumed by the ViewModel
+ */
 class MovieRepository @Inject constructor(@ApplicationContext private val context: Context, private val movieApiService: MovieApiService){
 
+    /**
+     * getTrendingMovieList method is used to get the list of trending movies
+     * It takes the page number as an argument and returns a flow of ApiResult<MovieListResponse?>
+     */
     suspend fun getTrendingMovieList(page: Int): Flow<ApiResult<MovieListResponse?>> = flow {
         if (!NetworkUtils.isNetworkAvailable(context)) {
             emit(ApiResult.Failure(true, Constants.NO_INTERNET, null))
@@ -36,12 +44,18 @@ class MovieRepository @Inject constructor(@ApplicationContext private val contex
 
     }.flowOn(Dispatchers.IO)
 
+
+    /**
+     * searchMovieList method is used to search for movies list based on the query
+     * It takes the page number and the query as arguments and returns a flow of ApiResult<MovieListResponse?>
+     */
     suspend fun searchMovieList(
         page: Int,
         query: String
     ): Flow<ApiResult<MovieListResponse?>> = flow<ApiResult<MovieListResponse?>> {
         if (!NetworkUtils.isNetworkAvailable(context)) {
             emit(ApiResult.Failure(true, Constants.NO_INTERNET, null))
+            return@flow
         }
 
         emit(ApiResult.Loading)
