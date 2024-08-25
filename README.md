@@ -8,7 +8,7 @@ TMDB Movie List is an Android application that displays a list of trending movie
 - Allows users to search for movies using a search query.
 - Includes error handling with retry functionality.
 - Shows a "No movies found" screen when a search query returns no results.
-- It avoids multiple api calls when the user types fast using debounging technique.
+- It avoids multiple api calls when the user types fast using debouncing technique.
 
 ## Screen Recording and APK
 
