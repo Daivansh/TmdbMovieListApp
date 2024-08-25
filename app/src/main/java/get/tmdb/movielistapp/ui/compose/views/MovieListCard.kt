@@ -47,7 +47,11 @@ fun MovieItemCard(item: MovieListItem, modifier: Modifier, navigateToMovieDetail
                     .height(dimensionResource(id = R.dimen.image_height_in_card))
                     .clip(RoundedCornerShape(dimensionResource(id = R.dimen.corner_radius_medium))),
                 loading = {
-                    CircularProgressIndicator()
+                    Column(modifier = Modifier.size(dimensionResource(id = R.dimen.progress_indicator_width)),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally) {
+                        CircularProgressIndicator()
+                    }
                 },
                 error = {
                     Column(

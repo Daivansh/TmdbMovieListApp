@@ -1,10 +1,9 @@
 package get.tmdb.movielistapp.domain
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
 import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.Serializable
 
-@Parcelize
+@Serializable
 data class MovieListItem(
 
     @SerializedName("id")
@@ -45,4 +44,4 @@ data class MovieListItem(
 
     @SerializedName("vote_count")
     val voteCount: Int? = null
-) : Parcelable
+)
