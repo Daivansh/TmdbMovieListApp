@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TmdbMovieListApp</string>
+
+    <string name="empty_list_msg">No Movies Found</string>
+    <string name="error_btn_retry">Retry now</string>
+
+    <string name="error_image_loading_txt">Error loading image</string>
+    <string name="search_bar_hint">Search movies</string>
 </resources>
