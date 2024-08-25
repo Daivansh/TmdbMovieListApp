@@ -11,6 +11,12 @@
     <dimen name="margin_between_cards">16dp</dimen>
 
     <dimen name="image_height_in_card">160dp</dimen>
+    <dimen name="image_height_in_detail_page">320dp</dimen>
 
     <dimen name="progress_indicator_width">64dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+
+    <dimen name="search_border_width">1dp</dimen>
+    <dimen name="search_view_height">48dp</dimen>
+
 </resources>

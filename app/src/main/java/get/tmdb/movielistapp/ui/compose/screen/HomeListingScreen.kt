@@ -23,6 +23,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import get.tmdb.movielistapp.R
 import get.tmdb.movielistapp.domain.MovieListItem
 import get.tmdb.movielistapp.ui.compose.views.MovieItemCard
+import get.tmdb.movielistapp.ui.compose.views.SearchView
 import get.tmdb.movielistapp.viewmodel.HomeListingViewmodel
 
 @Composable
@@ -35,6 +36,9 @@ fun HomeListingScreen(
             .fillMaxSize()
             .padding(dimensionResource(id = R.dimen.padding_medium))
     ) {
+        SearchUI(homeListingViewModel.searchText.value){
+            homeListingViewModel.onSearchFieldTextChange(it)
+        }
         MoviesList(homeListingViewModel.moviesListItems, navigateToMovieDetails)
         LoadingScreen(homeListingViewModel.isLoading.value)
         EmptyScreen(homeListingViewModel.isEmptyList.value)
@@ -42,6 +46,15 @@ fun HomeListingScreen(
             homeListingViewModel.loadTrendingMoviesListItems()
         }
     }
+}
+
+@Composable
+fun SearchUI(searchText: String, onTextChange: (String) -> Unit) {
+    SearchView(
+        searchText = searchText,
+        placeHolder = stringResource(id = R.string.search_bar_hint),
+        onTextChange = { onTextChange(it) },
+    )
 }
 
 @Composable

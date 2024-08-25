@@ -8,11 +8,28 @@ import androidx.compose.ui.unit.sp
 
 // Set of Material typography styles to start with
 val Typography = Typography(
-    bodyLarge = TextStyle(
+//    It will be used for movie list item label
+    labelMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Medium,
+        fontSize = 16.sp,
+        color = Black,
+        lineHeight = 24.sp,
+    ),
+//    It will be used for title on detail screen
+    titleMedium = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Medium,
+        fontSize = 24.sp,
+        color = Black,
+        lineHeight = 32.sp
+    ),
+//    It will be used for description on detail screen
+    bodyMedium = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Normal,
         fontSize = 16.sp,
-        lineHeight = 24.sp,
-        letterSpacing = 0.5.sp
+        color = Black,
+        lineHeight = 24.sp
     )
 )

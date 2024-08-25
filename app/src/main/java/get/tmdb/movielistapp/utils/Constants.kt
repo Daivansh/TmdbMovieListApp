@@ -12,4 +12,8 @@ object Constants {
     const val LARGE_IMAGE_URL = "https://image.tmdb.org/t/p/w500"
 
     const val CONTENT_DESC_SMALL_SIZE_IMAGE = "small_size_image"
+
+    const val DEBOUNCE_TIME = 500L
+
+    const val STR_EMPTY = ""
 }

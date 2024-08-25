@@ -14,7 +14,7 @@ interface MovieApiService {
     ): Response<MovieListResponse?>
 
 //search movie by name
-    @GET("search/movie/")
+    @GET("search/movie")
     suspend fun searchMovie(
         @Query("page") page: Int,
         @Query("query") query: String?

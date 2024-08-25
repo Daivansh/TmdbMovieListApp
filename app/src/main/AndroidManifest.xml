@@ -18,7 +18,6 @@
         <activity
             android:name=".ui.activity.HomeListingActivity"
             android:exported="true"
-            android:label="@string/title_activity_home_listing"
             android:theme="@style/Theme.TmdbMovieListApp">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
