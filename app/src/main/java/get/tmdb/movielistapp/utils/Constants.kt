@@ -7,4 +7,9 @@ object Constants {
 
     const val ERROR_MSG_GENERIC = "Something went wrong"
     const val NO_INTERNET = "No internet connection"
+
+    const val SMALL_IMAGE_URL = "https://image.tmdb.org/t/p/w200"
+    const val LARGE_IMAGE_URL = "https://image.tmdb.org/t/p/w500"
+
+    const val CONTENT_DESC_SMALL_SIZE_IMAGE = "small_size_image"
 }

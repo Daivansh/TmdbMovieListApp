@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_medium">16dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+
+    <dimen name="corner_radius_small">4dp</dimen>
+    <dimen name="corner_radius_medium">8dp</dimen>
+    <dimen name="corner_radius_large">12dp</dimen>
+
+    <dimen name="margin_between_cards">16dp</dimen>
+
+    <dimen name="image_height_in_card">160dp</dimen>
+
+    <dimen name="progress_indicator_width">64dp</dimen>
+</resources>
