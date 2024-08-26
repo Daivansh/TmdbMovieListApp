@@ -72,12 +72,12 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
 
-    //Hilt
+//     Hilt
     implementation(libs.hilt.android)
     implementation(libs.androidx.hilt.navigation.compose)
     kapt(libs.hilt.compiler)
 
-    // Retrofit
+//    Retrofit
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
@@ -98,14 +98,10 @@ dependencies {
     implementation(libs.androidx.compose.navigation)
     implementation(libs.kotlinx.serialization.json)
 
-    //coil
+//    coil
     implementation(libs.coil.compose)
 
+//    Testing
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
 }
